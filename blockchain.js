@@ -19,11 +19,15 @@ class Blockchain{
         }
         for(let i=1;i<chain.length;i++){
             const {timestamp,prevHash,hash,nonce,difficulty,data}=chain[i];
+            const lastDifficulty=chain[i-1].difficulty;
             const realLastHash=chain[i-1].hash;
             if(prevHash!==realLastHash){
                 return false;
             }
             const validHash=cryptoHash(timestamp,prevHash,nonce,difficulty,data);
+            if(Math.abs(lastDifficulty-difficulty)>1){
+                return false;
+            }
             if(hash!==validHash){
                 return false;
             }
@@ -44,17 +48,17 @@ class Blockchain{
 }
 
 
-const blockchain=new Blockchain();
-blockchain.addBlock({data:"block1"});
-blockchain.addBlock({data:"block2"});
-blockchain.addBlock({data:"Block3"})
-blockchain.addBlock({data:"Block4"})
-blockchain.addBlock({data:"Block5"})
-const result=Blockchain.isValidationChain(blockchain.chain);
+// const blockchain=new Blockchain();
+// blockchain.addBlock({data:"block1"});
+// blockchain.addBlock({data:"block2"});
+// blockchain.addBlock({data:"Block3"})
+// blockchain.addBlock({data:"Block4"})
+// blockchain.addBlock({data:"Block5"})
+// const result=Blockchain.isValidationChain(blockchain.chain);
 
 
-console.log(blockchain);
-console.log(result)
+// console.log(blockchain);
+// console.log(result)
 
 
 
