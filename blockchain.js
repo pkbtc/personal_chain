@@ -47,6 +47,9 @@ class Blockchain{
 const blockchain=new Blockchain();
 blockchain.addBlock({data:"block1"});
 blockchain.addBlock({data:"block2"});
+blockchain.addBlock({data:"Block3"})
+blockchain.addBlock({data:"Block4"})
+blockchain.addBlock({data:"Block5"})
 const result=Blockchain.isValidationChain(blockchain.chain);
 
 
