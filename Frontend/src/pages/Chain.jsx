@@ -1,8 +1,11 @@
 import React from 'react'
+import NavBar from "../components/NavBar";
 
 const Chain = () => {
   return (
-    <div>Chain</div>
+    <div>
+      <NavBar/>
+    </div>
   )
 }
 
