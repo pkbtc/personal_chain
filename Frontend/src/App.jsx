@@ -1,13 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import AddData from "./pages/AddData";
-import AvgMine from "./pages/AvgMine";
-import JoinPeer from "./pages/JoinPeer";
-import Signup from "./pages/SignUp";
 import ErrorPage from "./pages/ErrorPage";
-import NavBar from "./components/NavBar";
 import {MyContextProvider} from "./context/AuthContext";
-import SignIn from "./pages/SignIn";
+import CreateData from "./pages/CreateData";
+import Chain from "./pages/Chain";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,24 +12,12 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/add-data",
-      element: <AddData />,
+      path: "/chain",
+      element: <Chain />,
     },
     {
-      path: "/join-peer",
-      element: <JoinPeer />,
-    },
-    {
-      path: "/avg-mine",
-      element: <AvgMine />,
-    },
-    {
-      path: "/sign-in",
-      element: <SignIn />,
-    },
-    {
-      path: "/sign-up",
-      element: <Signup />,
+      path: "/create-data",
+      element: <CreateData />,
     },
     {
       path: "*",
@@ -43,7 +27,6 @@ function App() {
   return (
     <MyContextProvider>
       <div className="h-screen">
-        <NavBar />
         <RouterProvider router={router} />
       </div>
     </MyContextProvider>

@@ -1,7 +1,7 @@
-import React from "react"
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 const NavBar = () => {
+  const navigate = useNavigate();
   return (
     <nav className="flex justify-evenly">
       <div>
@@ -10,18 +10,12 @@ const NavBar = () => {
       <div>
         <ul className="flex">
           <li>
-            <NavLink to="/add-data">Add Data</NavLink>
+            <NavLink to="/chain">Chain</NavLink>
           </li>
           <li>
-            <NavLink to="/join-peer">Join Peer</NavLink>
-          </li>
-          <li>
-            <NavLink to="/avg-mine">Avg Mine Rate</NavLink>
+            <NavLink to="/create-data">Create Data</NavLink>
           </li>
         </ul>
-      </div>
-      <div className="">
-        <NavLink to="/sign-in">Login</NavLink>
       </div>
     </nav>
   );
