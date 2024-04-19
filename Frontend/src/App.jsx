@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
-import {MyContextProvider} from "./context/AuthContext";
 import CreateData from "./pages/CreateData";
 import Chain from "./pages/Chain";
 
@@ -25,11 +24,9 @@ function App() {
     },
   ]);
   return (
-    <MyContextProvider>
-      <div className="h-screen">
-        <RouterProvider router={router} />
-      </div>
-    </MyContextProvider>
+    <div className="h-screen bg-black">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
